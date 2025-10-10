@@ -10,80 +10,93 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: rgb(238, 174, 202);
-    background: radial-gradient(circle,
-            rgba(238, 174, 202, 1) 0%,
-            rgba(148, 187, 233, 1) 100%);
+    background: #090979;
+    background: linear-gradient(90deg,
+            rgb(22, 22, 180) 0%,
+            rgba(0, 98, 255, 1) 100%);
 
     .container {
         padding: 50px;
         background-color: white;
-        
+        border-radius: 5px;
+
     }
 
     #data {
         display: flex;
         flex-direction: column;
     }
-    h1{
+
+    h1 {
         margin-bottom: 10px;
         font-family: Arial, Helvetica, sans-serif;
     }
-    input{
+
+    input {
         margin-top: 10px;
         padding-left: 10px;
         height: 35px;
     }
-    #datalist{
+
+    #datalist {
         height: 35px;
-         margin-top: 10px;
-         padding-left: 10px;
+        margin-top: 10px;
+        padding-left: 10px;
     }
-    button{
+
+    button {
         background-color: rgb(15, 194, 42);
         border-radius: 5px;
         color: white;
         border: none;
         font-size: 1.2em;
         height: 35px;
-         margin-top: 10px;
+        margin-top: 10px;
     }
 
-    button:hover{
-        background-color: rgb(14, 172, 38);
+    button:hover {
+        background-color: rgb(11, 152, 32);
+        transform: scale(1.02);
     }
-    .transactions{
+
+    .transactions {
         margin-top: 20px;
         padding: 25px;
         background-color: rgba(128, 128, 128, 0.21);
         border-radius: 5px;
 
-        h2{
+        h2 {
             font-size: 1.6em;
             font-family: Arial, Helvetica, sans-serif;
         }
-        .sum{
+
+        .sum {
             margin-top: 15px;
         }
-        p{
+
+        p {
             font-size: 1.1em;
         }
     }
-    .delete-btn{
-        background-color: rgb(26, 199, 229);
+
+    .delete-btn {
+        background-color: rgb(229, 26, 26);
         border: none;
         border-radius: 5px;
         padding: 3px;
         margin-bottom: 10px;
         margin-right: 20px;
     }
-    .delete-btn:hover{
-        background-color: rgb(16, 186, 87);
+
+    .delete-btn:hover {
+        background-color: rgb(16, 180, 186);
     }
-    ul{
+
+    ul {
         list-style-type: none;
     }
-    li{
+
+    li {
         display: flex;
         justify-content: space-between;
         align-items: center;
