@@ -10,9 +10,9 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background: #090979;
+    background: #3ea9eb;
     background: linear-gradient(90deg,
-            rgb(22, 22, 180) 0%,
+            rgb(80, 181, 231) 0%,
             rgba(0, 98, 255, 1) 100%);
 
     .container {
@@ -104,5 +104,11 @@ body {
         margin-top: 10px;
         border: none;
         border-radius: 5px;
+    }
+
+    @media screen and (max-width: 600px) {
+        .container{
+            margin: 0px 1.3%;
+        }
     }
 }
