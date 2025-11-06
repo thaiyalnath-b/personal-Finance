@@ -12,14 +12,14 @@ document.addEventListener('DOMContentLoaded', () => {
             const li = document.createElement('li');
             if (transaction.list === 'Income') {
                 li.innerHTML = `${transaction.name} - ${transaction.amount.toFixed(2)} (${transaction.list})
-                <button class='delete-btn' onclick='deleteTransaction(${index})'>Delete</button>`;
-                li.style.backgroundColor = '#026a44ff';
+                <button class='delete-btn' role="button" onclick='deleteTransaction(${index})'>Delete</button>`;
+                li.style.backgroundColor = '#004c80';
                 li.style.color = 'white';
             }
             else {
                 li.innerHTML = `${transaction.name} - ${transaction.amount.toFixed(2)} (${transaction.list})
-                <button class='delete-btn' onclick='deleteTransaction(${index})'>Delete</button>`;
-                li.style.backgroundColor = '#648c06ff';
+                <button class='delete-btn' role="button" onclick='deleteTransaction(${index})'>Delete</button>`;
+                li.style.backgroundColor = '#004c80';
                 li.style.color = 'white';
             }
             transactionList.appendChild(li);
