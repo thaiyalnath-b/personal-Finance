@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 li.style.backgroundColor = '#004c80';
                 li.style.color = 'white';
             }
+            
             else {
                 li.innerHTML = `${transaction.name} - ${transaction.amount.toFixed(2)} (${transaction.list})
                 <button class='delete-btn' role="button" onclick='deleteTransaction(${index})'>Delete</button>`;
