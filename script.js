@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
             else {
                 li.innerHTML = `${transaction.name} - ${transaction.amount.toFixed(2)} (${transaction.list})
                 <button class='delete-btn' role="button" onclick='deleteTransaction(${index})'>Delete</button>`;
-                li.style.backgroundColor = '#004c80';
+                li.style.backgroundColor = '#76025fff';
                 li.style.color = 'white';
             }
             transactionList.appendChild(li);
