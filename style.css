@@ -1,174 +1,296 @@
-/* GLOBAL RESET */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-/* BODY BACKGROUND */
 body {
+    background-image: url(images/keep.jpg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
     min-height: 100vh;
-    background: #0D1B2A;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 30px;
-    color: #fff;
+    padding: 20px;
 }
 
-/* MAIN CONTAINER */
 .container {
-    margin: 0 25%;
-    background: #122339;
-    border-radius: 25px;
-    padding: 25px;
-    box-shadow: 0px 10px 25px rgba(0,0,0,0.5);
-}
-@media (max-width: 992px) {
-    .container{
-        margin: 0 20%;
-    }
-}
-@media (max-width: 778px) {
-    .container{
-        margin: 0 15%;
-    }
-}
-@media (max-width: 576px) {
-    .container{
-        margin: 0 3%;
-    }
-}
-
-/* HEADER */
-h1 {
-    font-size: 24px;
-    font-weight: 700;
-    text-align: center;
-    margin-bottom: 15px;
-    color: #E0E0E0;
-}
-
-/* INPUT STYLE */
-input, select, #datalist {
+    max-width: 800px;
     width: 100%;
-    padding: 12px 15px;
-    margin: 10px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 30px;
+    padding: 30px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2), 
+                0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.content {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+h1 {
+    color: rgb(255, 255, 255);
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    background: linear-gradient(135deg, #ffffff 0%, #e0e0e0 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+#data {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 25px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+#inputData, #inputAmount, #datalist {
+    width: 210px;
+    padding: 15px 20px;
     border: none;
     border-radius: 15px;
-    background: #1B263B;
-    color: #E0E0E0;
-    font-size: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
 }
 
-/* BUTTON PRIMARY */
+#inputData:focus, #inputAmount:focus, #datalist:focus {
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+    background: white;
+}
+
+#inputData::placeholder, #inputAmount::placeholder {
+    color: #666;
+}
+
 #btn {
-    width: 100%;
-    padding: 14px 0;
-    margin-top: 10px;
-    background: #00BFA6;
-    border-radius: 50px;
+    padding: 15px 30px;
     border: none;
-    font-size: 16px;
-    font-weight: 700;
-    color: #fff;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    font-size: 1rem;
+    font-weight: 600;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
 #btn:hover {
-    background: #00D9B9;
-    transform: scale(1.03);
+    transform: translateY(-2px);
+    box-shadow: 0 15px 30px rgba(102, 126, 234, 0.5);
 }
 
-/* TRANSACTION CARD CONTAINER */
+#btn:active {
+    transform: translateY(0);
+}
+
+#btn .text {
+    position: relative;
+    z-index: 1;
+}
+
+#btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    transition: left 0.3s ease;
+}
+
+#btn:hover::before {
+    left: 0;
+}
+
 .transactions {
-    margin-top: 20px;
-    background: #1B263B;
-    border-radius: 20px;
-    padding: 18px;
-    box-shadow: 0px 8px 20px rgba(0,0,0,0.4);
+    margin-top: 30px;
 }
 
-.transactions h2 {
-    font-size: 20px;
-    color: #00E5A8;
-    margin-bottom: 10px;
-    margin-top: 10px;
+h2 {
+    color: white;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 500;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 10px;
 }
 
-.transactions p {
-    font-size: 16px;
-    color: #E0E0E0;
+h2.sum {
+    margin-top: 30px;
 }
 
-/* LIST OF EXPENSE ITEMS */
-ul {
+#TransactionList {
     list-style: none;
-    padding: 0;
+    max-height: 300px;
+    overflow-y: auto;
+    padding-right: 10px;
 }
 
-li {
+#TransactionList li {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #0F1A2A;
-    padding: 10px 13px;
-    margin-top: 12px;
+    padding: 15px 20px;
+    margin-bottom: 10px;
     border-radius: 15px;
-    transition: 0.2s ease;
+    font-weight: 500;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+    animation: slideIn 0.3s ease;
 }
 
-li:hover {
-    background: #15233B;
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
-/* AMOUNT TEXT */
-li span.amount {
-    font-weight: 700;
-    color: #00E1A8;
-    font-size: 15px;
+#TransactionList li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* DELETE BUTTON */
 .delete-btn {
-    height: 34px;
-    padding: 0 3px;
-    background: #FF5252;
+    padding: 8px 15px;
     border: none;
-    border-radius: 50%;
-    color: #fff;
-    font-weight: 700;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-weight: 600;
     cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: 0.3s ease;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 0.9rem;
 }
 
 .delete-btn:hover {
-    background: #FF3B3B;
-    transform: scale(1.15);
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.05);
 }
 
-/* SUMMARY BAR */
+.delete-btn:active {
+    transform: scale(0.95);
+}
+
 .summary {
-    margin-top: 18px;
-    margin-bottom: 10px;
-    background: #15233B;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 25px;
     border-radius: 20px;
-    padding: 15px;
-    text-align: center;
-    color: #00E5A8;
-    font-size: 17px;
-    font-weight: 600;
-    box-shadow: 0px 7px 18px rgba(0,0,0,0.45);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin-top: 20px;
 }
 
-/* RESPONSIVE */
-@media screen and (max-width: 380px) {
+.summary p {
+    color: #004c80;
+    font-size: 1.2rem;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.summary span {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-left: 10px;
+    
+}
+
+#incomes {
+    color: #018b44;
+}
+
+#expences {
+    color: #ec3427;
+}
+
+#balance {
+    color: #d400ff;
+}
+
+/* Scrollbar styling */
+#TransactionList::-webkit-scrollbar {
+    width: 8px;
+}
+
+#TransactionList::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+#TransactionList::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+}
+
+#TransactionList::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 600px) {
     .container {
-        width: 95%;
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    #data {
+        flex-direction: column;
+    }
+    
+    #inputData, #inputAmount, #datalist, #btn {
+        width: 100%;
+    }
+    
+    .summary {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .summary p {
+        margin: 5px 0;
     }
 }
